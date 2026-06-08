@@ -1,0 +1,114 @@
+.shopify-form-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--bg-color);
+    position: relative;
+}
+
+.shopify-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at right bottom, rgba(204, 139, 114, 0.1), transparent 50%);
+    pointer-events: none;
+}
+
+[dir="rtl"] .shopify-form-section::before {
+    background: radial-gradient(circle at left bottom, rgba(204, 139, 114, 0.1), transparent 50%);
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-glow);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+}
+
+.form-wrapper .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(204, 139, 114, 0.1);
+}
+
+.form-submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    padding: 1.2rem;
+}
+
+.success-message {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--accent-color);
+}
+
+.success-message h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+    .form-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
